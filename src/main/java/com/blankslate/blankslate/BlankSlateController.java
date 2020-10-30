@@ -12,16 +12,11 @@ import java.util.Date;
 @RequestMapping("/")
 public class BlankSlateController {
 
-  @GetMapping("/index")
+  @GetMapping("/")
   public String index() {
-    String response = "Greetings from Spring Boot!";
-    return response;
-  }
-
-  @GetMapping("/getSystemTime")
-  public String getSystemTime() {
-    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MMM/dd HH:mm:ss");
     Date date = new Date();
-    return dateFormat.format(date);
+    String response = "Hi, From Blank Slate - SpringBoot App, Current Time is:: "+dateFormat.format(date);
+    return response;
   }
 }
